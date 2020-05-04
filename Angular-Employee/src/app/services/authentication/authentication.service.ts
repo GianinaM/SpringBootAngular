@@ -21,20 +21,17 @@ export class AuthenticationService {
 
     const authUrl = baseUrl + "validateLogin";
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+
     return this.http.get<User>(`${authUrl}`,{headers}).pipe(
      map(
        userData => {
         sessionStorage.setItem('username',username);
+        let authString = 'Basic ' + btoa(username + ':' + password);
+          sessionStorage.setItem('basicAuth', authString);
         return userData;
        }
      )
     );
-    // if (username == testUsername && password == testPassword) {
-    //   sessionStorage.setItem('username', username)
-    //   return true;
-    // } else {
-    //   return false;
-    // }
   }
 
   isUserLoggedIn() {
@@ -44,6 +41,7 @@ export class AuthenticationService {
   }
 
   logOut() {
-    sessionStorage.removeItem('username')
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('basicAuth')
   }
 }

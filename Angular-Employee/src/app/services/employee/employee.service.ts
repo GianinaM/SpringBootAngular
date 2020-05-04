@@ -9,39 +9,33 @@ import { Employee } from 'src/app/entities/employee';
 })
 export class EmployeeService {
 
-
-  username: string = testUsername;
-  password: string = testPassword;
-
-  // private headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
-
   private url = baseUrl + 'employees';
 
   constructor(private http: HttpClient) { }
 
   getEmployee(id: number): Observable<any> {
 
-    return this.http.get<Employee>(`${this.url}/${id}`,{headers});
+    return this.http.get<Employee>(`${this.url}/${id}`);
   }
 
   createEmployee(employee: Object): Observable<Object> {
 
-    return this.http.post<Employee>(`${this.url}`, employee, {headers});
+    return this.http.post<Employee>(`${this.url}`, employee);
   }
 
   updateEmployee(id: number, employee: Object): Observable<Object> {
 
-    return this.http.put<Employee>(`${this.url}/${id}`, employee, {headers});
+    return this.http.put<Employee>(`${this.url}/${id}`, employee);
   }
 
   deleteEmployee(id: number): Observable<any> {
 
-    return this.http.delete(`${this.url}/${id}`,{headers});
+    return this.http.delete(`${this.url}/${id}`);
 
   }
 
   getEmployeesList(): Observable<any> {
 
-    return this.http.get<Employee[]>(`${this.url}`,{headers});
+    return this.http.get<Employee[]>(`${this.url}`);
   }
 }

@@ -1,7 +1,9 @@
+C:\Projects\SpringBoot\SpringBootAngular\SpringBoot-Employee\src\main\java\com\example\demo\model\User.java
 C:\Projects\SpringBoot\SpringBootAngular\SpringBoot-Employee\src\main\java\com\example\demo\repository\EmployeeRepository.java
 C:\Projects\SpringBoot\SpringBootAngular\SpringBoot-Employee\src\main\java\com\example\demo\controller\EmployeeController.java
 C:\Projects\SpringBoot\SpringBootAngular\SpringBoot-Employee\src\main\java\com\example\demo\exception\ErrorDetails.java
 C:\Projects\SpringBoot\SpringBootAngular\SpringBoot-Employee\src\main\java\com\example\demo\DemoSpringBootApplication.java
 C:\Projects\SpringBoot\SpringBootAngular\SpringBoot-Employee\src\main\java\com\example\demo\exception\GlobalExceptionHandler.java
 C:\Projects\SpringBoot\SpringBootAngular\SpringBoot-Employee\src\main\java\com\example\demo\model\Employee.java
+C:\Projects\SpringBoot\SpringBootAngular\SpringBoot-Employee\src\main\java\com\example\demo\SecurityConfig.java
 C:\Projects\SpringBoot\SpringBootAngular\SpringBoot-Employee\src\main\java\com\example\demo\exception\ResourceNotFoundException.java

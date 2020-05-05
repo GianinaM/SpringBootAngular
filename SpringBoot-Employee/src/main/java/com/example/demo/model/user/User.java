@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.model.user;
 
 public class User {
 	private String status;

@@ -10,8 +10,8 @@ export const environment = {
 
 export const baseUrl = "http://localhost:8080/";
 
-export const testUsername = "root";
-export const testPassword = "toor";
+export const testUsername = "javainuse";
+export const testPassword = "password";
 export const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(testUsername + ':' + testPassword) });
 /*
  * For easier debugging in development mode, you can import the following file

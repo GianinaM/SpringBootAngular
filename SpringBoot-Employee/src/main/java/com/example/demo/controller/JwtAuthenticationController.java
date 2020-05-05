@@ -1,12 +1,18 @@
 package com.example.demo.controller;
 
+import java.io.Console;
+
 import com.example.demo.config.JwtTokenUtil;
+import com.example.demo.model.DAOUser;
 import com.example.demo.model.jwt.JwtRequest;
 import com.example.demo.model.jwt.JwtResponse;
 import com.example.demo.model.user.UserDTO;
 import com.example.demo.service.JwtUserDetailsService;
 
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -47,7 +53,14 @@ public class JwtAuthenticationController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
-		return ResponseEntity.ok(userDetailsService.save(user));
+		try {
+			DAOUser userResponse = userDetailsService.save(user);
+			return ResponseEntity.ok(userResponse);
+		} catch (DataIntegrityViolationException e){
+			System.out.println("HERE");
+			return ResponseEntity.status(HttpStatus.CONFLICT).build(); 
+			// ResponseEntity.status(HttpStatus.BAD_REQUEST);
+		}
     }
     
 	private void authenticate(String username, String password) throws Exception {

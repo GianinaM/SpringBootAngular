@@ -9,10 +9,13 @@
     </li>
   </ul>
   <ul class="navbar-nav ml-auto">
-    <li class="nav-item" style="align-self: flex-end;">
+    <li class="nav-item">
+        <a *ngIf="!loginService.isUserLoggedIn()" routerLink="register" class="nav-link" routerLinkActive="active">Register</a>
+    </li>
+    <li class="nav-item">
         <a *ngIf="!loginService.isUserLoggedIn()" routerLink="login" class="nav-link" routerLinkActive="active">LogIn</a>
     </li>
-    <li class="nav-item" style="align-self: flex-end;">
+    <li class="nav-item">
         <a *ngIf="loginService.isUserLoggedIn()" routerLink="logout" class="nav-link" routerLinkActive="active">LogOut</a>
     </li>
   </ul>

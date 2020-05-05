@@ -35,6 +35,19 @@ export class AuthenticationService {
         return userData;
        }
      )
+    );
+  }
+
+  register(username, password) {
+    const registerUrl = baseUrl + "register";
+    return this.http.post<any>(`${registerUrl}`,{username,password}).pipe(
+     map(
+       userData => {
+        let tokenStr= 'Bearer '+ userData.token;
+        sessionStorage.setItem('token', tokenStr);
+        return userData;
+       }
+     )
 
     );
   }

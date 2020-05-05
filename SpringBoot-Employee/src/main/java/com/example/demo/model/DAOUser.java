@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import com.example.demo.model.user.UserDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;

@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BasicAuthHtppInterceptorService } from './services/basicAuthHtppInterceptor/basic-auth-htpp-interceptor.service';
+import { RegisterComponent } from './components/register/register.component';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,15 @@ import { BasicAuthHtppInterceptorService } from './services/basicAuthHtppInterce
     LoginComponent,
     LogoutComponent,
     HeaderComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // BrowserAnimationsModule,
+    // NgbModule,
   ],
   providers: [
     {

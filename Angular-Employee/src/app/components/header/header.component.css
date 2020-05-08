@@ -1,0 +1,26 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.mat-menu-item a{
+  color: black;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+.mat-button:hover {
+  font-weight: bold;
+}
+
+
+.navbar {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+span {
+  padding-right: 1rem;
+}

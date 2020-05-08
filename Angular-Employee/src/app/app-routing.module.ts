@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGaurdService } from './services/authGaurd/auth-gaurd.service';
 import { RegisterComponent } from './components/register/register.component';
+import { TestFormComponent } from './components/test-form/test-form.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate:[AuthGaurdService] },
   { path: 'register', component: RegisterComponent},
+  { path: 'testForm', component: TestFormComponent},
 ];
 
 @NgModule({

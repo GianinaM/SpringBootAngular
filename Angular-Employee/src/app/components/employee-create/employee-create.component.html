@@ -1,22 +1,46 @@
-<h3>Create Employee</h3>
-<div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">First Name</label>
-      <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Last Name</label>
-      <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Email Address</label>
-      <input type="email" class="form-control" id="emailId" required [(ngModel)]="employee.emailId" name="emailId">
-    </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
+<div [hidden]="submitted" class="small-middle-container">
+  <h3 class="centered">Create Employee</h3>
+  <form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="First Name" formControlName="firstNameCtrl" type="text"
+            (input)="employee.firstName=$event.target.value">
+            <mat-error *ngIf="addEmployeeForm.controls['firstNameCtrl'].hasError('required')">
+              First name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Last Name" formControlName="lastNameCtrl" type="text"
+            (input)="employee.lastName=$event.target.value">
+            <mat-error *ngIf="addEmployeeForm.controls['lastNameCtrl'].hasError('required')">
+              Last name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Email" formControlName="emailIdCtrl" type="email"
+            (input)="employee.emailId=$event.target.value">
+            <mat-error *ngIf="addEmployeeForm.controls['emailIdCtrl'].hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="addEmployeeForm.controls['emailIdCtrl'].hasError('email')">
+              This must be an <strong>email</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Login</button>
+      </mat-card-actions>
+    </mat-card>
   </form>
 </div>
 

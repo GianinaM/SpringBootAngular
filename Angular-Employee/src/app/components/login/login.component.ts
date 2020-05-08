@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
@@ -7,30 +8,30 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  loginForm = this.fb.group({
+    username: [null, Validators.required],
+    password: [null, Validators.required]
+  });
 
-  username: string
-  password: string
   invalidLogin: boolean = false;
 
-  constructor( private router: Router,
-    private loginService: AuthenticationService) { }
-
-  ngOnInit(): void {
-  }
+  constructor(private fb: FormBuilder,
+    private router: Router,
+    private loginService: AuthenticationService) {}
 
   checkLogin() {
-    (this.loginService.authenticate(this.username, this.password).subscribe(
+
+    (this.loginService.authenticate(this.loginForm.get("username").value,
+     this.loginForm.get("password").value).subscribe(
       data => {
         this.router.navigate([''])
         this.invalidLogin = false
       },
       error => {
         this.invalidLogin = true
-
       }
     )
     );
   }
-
 }

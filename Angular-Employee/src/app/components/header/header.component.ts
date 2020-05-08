@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
@@ -8,9 +8,14 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 })
 export class HeaderComponent implements OnInit {
 
+  @Output() public sidenavToggle = new EventEmitter();
+
   constructor( public loginService: AuthenticationService) { }
 
   ngOnInit(): void {
   }
 
+  public onToggleSidenav = () => {
+    this.sidenavToggle.emit();
+  }
 }

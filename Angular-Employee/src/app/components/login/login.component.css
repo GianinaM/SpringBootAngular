@@ -1,4 +1,33 @@
-.small-middle-container{
-	margin: auto;
-	width: 40%;
+.full-width {
+  width: 100%;
+}
+.half-width {
+  width: 100%;
+}
+
+.loginForm {
+  width: 100%;
+}
+.login-card {
+  min-width: 120px;
+  width: 50%;
+  margin: 20px auto;
+}
+
+.mat-card-content {
+  text-size-adjust: 20px;
+  margin: 10%;
+  align-items: center;
+}
+
+.mat-card-actions, .mat-card-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }

@@ -9,3 +9,37 @@
   align-items: center;
   flex-direction: column;
 }
+
+.full-width {
+  width: 100%;
+}
+.half-width {
+  width: 100%;
+}
+
+.loginForm {
+  width: 100%;
+}
+.create-employee-card {
+  min-width: 120px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.mat-card-content {
+  text-size-adjust: 20px;
+  margin: 10%;
+  align-items: center;
+}
+
+.mat-card-actions, .mat-card-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
